@@ -1,0 +1,20 @@
+<md-content class="md-padding">
+    <form ng-submit="$event.preventDefault()">
+        <md-autocomplete
+                ng-disabled="isDisabled"
+                md-no-cache="noCache"
+                md-selected-item="selectedItem"
+                md-search-text-change="searchTextChange(searchText)"
+                md-search-text="searchText"
+                md-selected-item-change="selectedItemChange(item)"
+                md-items="item in querySearch(searchText)"
+                md-item-text="item.name"
+                md-min-length="0"
+                placeholder="Please type any country in the world">
+            <md-item-template>
+                <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
+            </md-item-template>
+        </md-autocomplete>
+        <br/>
+    </form>
+</md-content>

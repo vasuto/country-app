@@ -1,0 +1,20 @@
+<div ng-cloak class="md-padding">
+    <form ng-submit="addSelectedCountries()">
+        <label class="md-padding">Country: </label>
+        <search selected-countries="selectedCountries" response-Message="responseMessage"></search>
+        <md-list ng-cloak>
+            <md-subheader class="md-no-sticky">Selected:</md-subheader>
+            <md-list-item ng-repeat="selectedCountry in selectedCountries">
+                <p> {{ selectedCountry.name }} </p>
+                <md-button class="md-secondary" ng-click="removeSelected(selectedCountry)">X</md-button>
+            </md-list-item>
+        </md-list>
+        <md-button type="submit" class="md-raised md-primary">Submit</md-button> {{responseMessage}}
+    </form>
+    <!--Selected:-->
+    <!--<ul class="unstyled">-->
+        <!--<li ng-repeat="country in countries">-->
+            <!--{{country.name}}-->
+        <!--</li>-->
+    <!--</ul>-->
+</div>
